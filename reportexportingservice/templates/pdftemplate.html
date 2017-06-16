@@ -1,0 +1,65 @@
+<style>
+
+*{
+  font-family: sans-serif;
+}
+
+h1{
+  text-align: center;
+  margin-top:40px;
+}
+
+div.clear {
+    clear:both;
+}
+
+.outer_border{
+  border: 20px solid black;
+}
+
+.inner_border{
+  border: 5px solid black;
+  margin: 5px;
+}
+
+.float_right{
+  float:right;
+  margin-right:40px;
+  display: block;
+}
+
+.align_center{
+  text-align: center;
+}
+</style>
+
+<html class="outer_border">
+<body class="inner_border">
+  <div>
+  <h1>
+    The Report
+  </h1>
+
+  <div class="float_right">
+    <p>
+      Organization: {{data.organization}}
+    </p>
+    <p>
+      Reported: {{data.reported_at}}
+    </p>
+    <p>
+      Created: {{data.created_at}}
+    </p>
+  </div>
+  <br>
+  <div class="clear align_center">
+    {% for item in data.inventory %}
+    <p>
+      {{item.name}}: {{item.price}}
+    </p>
+    {% endfor %}
+  </div>
+  </div>
+</body>
+
+</html>
